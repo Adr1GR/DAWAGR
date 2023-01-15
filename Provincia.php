@@ -31,10 +31,19 @@ class Provincia implements JsonSerializable{
     function getAcive(){
         return $this->acive;
     }
+
     function getLocalidades(): array{
+        $localidades = [];
+        foreach($this->localidades as $localidad){
+            $localidades[] = $localidad->jsonSerialize();
+        }
+        return $localidades;
+    }
+
+    /* function getLocalidades(): array{
         $provincias = ["adawd", "aDawd"];
         return $provincias;
-    }
+    } */
     
     function addLocalidad(Localidad $localidad){
         $this->localidades[] = $localidad;
