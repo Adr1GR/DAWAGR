@@ -52,4 +52,20 @@ class ProvinciaController
         
         return $item;        
     }
+
+    function getAllLocalidades(int $idProvincia): ?array
+    {
+        $items=null;
+        
+        $elements=$this->connection->hgetAll(ProvinciaController::$KEY);
+        if($elements!=null){
+            $items= array();
+            foreach ($elements as $json_text){
+                $tempo=new Provincia();
+                $tempo->loadfromJSON($json_text);
+                array_push($items,$tempo);
+            }
+        }
+        return $items;
+    }
 }
