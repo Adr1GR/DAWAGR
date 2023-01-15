@@ -12,7 +12,7 @@ class Provincia implements JsonSerializable{
         $this->id=$tempo["id"];
         $this->name=$tempo["name"];
     }
-    function getName(): string{
+    function getName(): ?string{
         return $this->name;
     }
     function getId(): int {
