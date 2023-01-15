@@ -69,7 +69,7 @@ class ProvinciaController
         return $items;
     }
 
-    function findLocalidad(int $id): ?Localidad
+    function findLocalidad(string $id): ?Localidad
     {
         $item = null;
         $json_text = $this->connection->hget(ProvinciaController::$KEY, $id);
