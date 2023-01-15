@@ -53,7 +53,7 @@ class ProvinciaController
         return $item;        
     }
 
-    function getAllLocalidades(int $idProvincia): ?array
+    function getAllLocalidades(): ?array
     {
         $items=null;
         
